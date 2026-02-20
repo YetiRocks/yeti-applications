@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
   base: './',
@@ -11,11 +12,15 @@ export default defineConfig({
     }),
     react(),
   ],
+  resolve: {
+    alias: { '@yeti': path.resolve(__dirname, '../../../shared') },
+  },
   build: {
     outDir: '../web',
     emptyOutDir: true,
   },
   server: {
+    fs: { allow: ['..', '../../../shared'] },
     port: 5177,
     proxy: {
       '/yeti-applications': {

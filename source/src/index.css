@@ -1,98 +1,6 @@
-/* Yeti Studio CSS Variables */
+/* App-specific overrides */
 :root {
-  --color-black: #121212;
-  --color-white: #dddddd;
-  --color-grey: #666666;
-  --color-black-overlay: rgba(0, 0, 0, 0.2);
-  --color-white-overlay: rgba(255, 255, 255, 0.06);
-  --color-success: #6a9955;
-  --color-warning: #d7ba7d;
-  --color-error: #d16969;
-  --color-info: #569cd6;
-  --color-border-primary: var(--color-white-overlay);
   --color-accent: rgba(255, 0, 255, 0.8);
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-family-base: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", sans-serif;
-  --font-family-mono: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
-  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body, #root {
-  height: 100%;
-  overflow: hidden;
-}
-
-body {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-sm);
-  color: var(--color-white);
-  background: var(--color-black);
-  line-height: 1.5;
-}
-
-/* App shell */
-.app-shell {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* Header */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 73px;
-  padding: 0 2rem;
-  border-bottom: 1px solid var(--color-border-primary);
-  background: var(--color-black-overlay);
-  flex-shrink: 0;
-}
-
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-.header-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
 }
 
 /* Main content area */
@@ -102,7 +10,7 @@ body {
   min-height: 0;
 }
 
-/* ── Home View ── */
+/* Home View */
 .home-view {
   display: flex;
   flex-direction: column;
@@ -113,7 +21,8 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-6);
+  height: 51px;
+  padding: 0 var(--space-4);
   border-bottom: 1px solid var(--color-border-primary);
   background: var(--color-black-overlay);
   flex-shrink: 0;
@@ -140,7 +49,7 @@ body {
   border-color: var(--color-grey);
 }
 
-/* ── Card Grid ── */
+/* Card Grid */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -161,20 +70,13 @@ body {
 }
 
 .app-card:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .app-card-top {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
 }
 
 .status-dot.running {
@@ -220,7 +122,7 @@ body {
   gap: var(--space-3);
 }
 
-/* ── Detail View ── */
+/* Detail View */
 .detail-view {
   display: flex;
   flex-direction: column;
@@ -231,7 +133,8 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  padding: var(--space-3) var(--space-6);
+  height: 51px;
+  padding: 0 var(--space-4);
   border-bottom: 1px solid var(--color-border-primary);
   background: var(--color-black-overlay);
   flex-shrink: 0;
@@ -338,11 +241,11 @@ body {
 }
 
 .table-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .table-btn.active {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   border-color: var(--color-grey);
 }
 
@@ -397,28 +300,16 @@ body {
   font-size: var(--font-size-xs);
 }
 
-/* Buttons */
+/* Button overrides — sidebar style */
 .btn {
   padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--color-border-primary);
   border-radius: var(--radius-sm);
-  background: var(--color-white-overlay);
-  color: var(--color-white);
-  cursor: pointer;
-  font-size: var(--font-size-sm);
-  font-family: var(--font-family-base);
   transition: all var(--transition-fast);
 }
 
-.btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* Empty state */
-.empty-state {
-  text-align: center;
-  padding: var(--space-8);
-  color: var(--color-grey);
+.btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--color-border-primary);
 }
 
 /* Toast */
@@ -448,14 +339,14 @@ body {
   to { opacity: 0; }
 }
 
-/* ── Detail Body Layout (sidebar + content) ── */
+/* Detail Body Layout (sidebar + content) */
 .detail-body-layout {
   display: flex;
   flex: 1;
   min-height: 0;
 }
 
-/* ── Database Nav ── */
+/* Database Nav */
 .db-nav {
   width: 200px;
   min-width: 200px;
@@ -514,7 +405,7 @@ body {
   border-left: 2px solid var(--color-white);
 }
 
-/* ── Detail Content (right side of sidebar) ── */
+/* Detail Content (right side of sidebar) */
 .detail-content {
   flex: 1;
   overflow-y: auto;
@@ -522,7 +413,7 @@ body {
   min-width: 0;
 }
 
-/* ── Subnav (Data / Config tabs) ── */
+/* Subnav (Data / Config tabs) */
 .subnav {
   margin-left: auto;
   display: flex;
@@ -550,7 +441,7 @@ body {
   border-bottom-color: var(--color-accent);
 }
 
-/* ── Config View ── */
+/* Config View */
 .config-view {
   flex: 1;
   display: flex;
@@ -584,19 +475,18 @@ body {
   min-height: 0;
 }
 
-.json-key { color: #9cdcfe; }
+/* JSON color overrides for config view */
 .json-string { color: #ce9178; }
-.json-number { color: #b5cea8; }
 .json-bool { color: #569cd6; }
 
-/* ── Data Table Wrapper ── */
+/* Data Table Wrapper */
 .data-table-wrapper {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
 }
 
-/* ── Pagination ── */
+/* Pagination */
 .pagination-controls {
   display: flex;
   align-items: center;
@@ -620,20 +510,14 @@ body {
   cursor: default;
 }
 
-/* ── Record Detail Modal ── */
+/* Record Detail Modal overrides */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 100;
+  backdrop-filter: none;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
-  background: var(--color-black);
-  border: 1px solid var(--color-border-primary);
   border-radius: var(--radius-md);
   padding: var(--space-4);
   width: 600px;
@@ -671,35 +555,15 @@ body {
 }
 
 .modal-actions {
-  display: flex;
-  justify-content: flex-end;
   gap: var(--space-2);
 }
 
-.btn-primary {
-  background: rgba(255, 0, 255, 0.2);
-  border-color: rgba(255, 0, 255, 0.15);
-  color: #ffffff;
-}
-
-.btn-primary:hover {
-  background: rgba(255, 0, 255, 0.35);
-  border-color: rgba(255, 0, 255, 0.25);
-  color: #ffffff;
-}
-
-.btn-primary:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-/* ── New App Modal ── */
 .modal-title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
   color: #fff;
+  margin-bottom: 0;
 }
 
+/* New App Modal */
 .modal-options {
   display: flex;
   flex-direction: column;
@@ -723,7 +587,7 @@ body {
 }
 
 .modal-option:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .modal-option-disabled {
@@ -788,21 +652,19 @@ body {
   overflow-y: auto;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+.btn-primary {
+  background: rgba(255, 0, 255, 0.2);
+  border-color: rgba(255, 0, 255, 0.15);
+  color: #ffffff;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+.btn-primary:hover:not(:disabled) {
+  background: rgba(255, 0, 255, 0.25);
+  border-color: rgba(255, 0, 255, 0.4);
+  color: #ffffff;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-grey);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-white);
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
