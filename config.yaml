@@ -6,7 +6,7 @@ enabled: true
 route_prefix: /admin
 
 schemas:
-  - schema.graphql
+  - schemas/schema.graphql
 
 resources:
   - resources/*.rs
