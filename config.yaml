@@ -29,8 +29,7 @@ extensions:
           - strategy: provider
             pattern: "google"
             role: admin
-  - yeti-vectors:
-      fields: []
+  - yeti-vectors
 
 dependencies:
   serde_yaml:
