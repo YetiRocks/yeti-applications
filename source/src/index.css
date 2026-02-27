@@ -1077,6 +1077,8 @@ td.col-actions { text-align: right; }
 .login-card button[type="submit"]:hover:not(:disabled) { background: rgba(255, 0, 255, 0.25); border-color: rgba(255, 0, 255, 0.4); }
 .login-card button[type="submit"]:disabled { opacity: 0.4; cursor: default; }
 .login-error { color: var(--color-error); font-size: var(--font-size-sm); text-align: center; }
+.login-card .btn-oauth { justify-content: center; width: 100%; padding: var(--space-3) var(--space-4); background: rgba(36, 41, 46, 0.5); border-color: var(--color-border-primary); color: var(--color-white); }
+.login-card .btn-oauth:hover { background: var(--color-white-overlay); transform: translateY(-1px); }
 .loading { display: flex; align-items: center; justify-content: center; height: 100vh; color: var(--color-grey); }
 
 /* ── Toast ── */
@@ -1175,13 +1177,13 @@ td.col-actions { text-align: right; }
 .bench-timer-overdue { color: var(--color-error); }
 .bench-spinner { display: inline-block; width: 10px; height: 10px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: bench-spin 0.8s linear infinite; }
 @keyframes bench-spin { to { transform: rotate(360deg); } }
-.bench-card-config { font-size: var(--font-size-xs); color: var(--color-grey); }
+.bench-card-config { font-size: var(--font-size-xs); color: var(--color-grey); height: 25px; padding-top: 3px; }
 .bench-config-label { cursor: pointer; }
 .bench-config-label:hover { color: var(--color-white); }
-.bench-config-editor { display: flex; flex-direction: column; gap: var(--space-2); }
-.bench-config-editor label { display: flex; align-items: center; gap: var(--space-1); font-size: var(--font-size-xs); color: var(--color-grey); }
-.bench-config-editor input { width: 60px; padding: var(--space-1); background: var(--color-white-overlay); border: 1px solid var(--color-border-primary); border-radius: var(--radius-sm); color: var(--color-white); font-size: var(--font-size-xs); font-family: var(--font-family-mono); }
-.bench-config-actions { display: flex; gap: var(--space-2); }
+.bench-config-editor { display: flex; align-items: center; gap: var(--space-2); flex-wrap: nowrap; }
+.bench-config-editor label { display: flex; align-items: center; gap: 2px; font-size: 0.7rem; color: var(--color-grey); white-space: nowrap; }
+.bench-config-editor input { width: 40px; padding: 2px 4px; background: var(--color-white-overlay); border: 1px solid var(--color-border-primary); border-radius: var(--radius-sm); color: var(--color-white); font-size: 0.7rem; font-family: var(--font-family-mono); }
+.bench-config-actions { display: flex; gap: var(--space-1); }
 .bench-card-stats { display: flex; gap: var(--space-4); }
 .bench-stat { display: flex; flex-direction: column; }
 .bench-stat-value { font-size: var(--font-size-lg); font-weight: 700; color: var(--color-white); }

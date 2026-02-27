@@ -73,7 +73,6 @@ function formatNumber(n: number): string {
 
 function formatMs(n: number): string {
   if (n === 0) return '-'
-  if (n < 1) return n.toFixed(3) + 'ms'
   return n.toFixed(2) + 'ms'
 }
 
@@ -370,8 +369,8 @@ function TestCard({ test, config, latest, phase, isDisabled, isSelected, warmupS
 
       <div className="bench-card-stats">
         <div className="bench-stat">
-          <span className="bench-stat-value">{hasData ? `${formatNumber(results.extrapolatedThroughput ? parseFloat(results.extrapolatedThroughput) : results.throughput!)} /s` : '—'}</span>
-          <span className="bench-stat-label">throughput</span>
+          <span className="bench-stat-value">{hasData ? formatNumber(results.extrapolatedThroughput ? parseFloat(results.extrapolatedThroughput) : results.throughput!) : '—'}</span>
+          <span className="bench-stat-label">req/sec</span>
         </div>
         <div className="bench-stat">
           <span className="bench-stat-value">{hasData ? formatMs(results.p50 ?? 0) : '—'}</span>
